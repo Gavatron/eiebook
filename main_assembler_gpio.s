@@ -87,6 +87,8 @@
 ; Output set registers (set to make output pins low)
 #define PIOB_CODR_INIT    0xFFFFFFFF  
 
+; Watchdog timer control
+#define WDTMR_INIT        0x00008000
 
 ;--------------------------------------------------------------------------------------
 ; Other constants
@@ -96,20 +98,27 @@ KILL_CYCLES       EQU     1000000     ; 250ms / (4e6 cycles/sec) = 1e6 cycles
 
 main
 init
+;Hello World program
+  LDR     r0, =WDTMR_INIT                 ; Load ro with the init constant
+  LDR     r1, =AT91C_WDTC_WDMR            ; Load r1 WDTC_WDMR register address
+  STR     r0, [r1]                        ; *r1 = r0
+
 	LDR	    r0, =PMC_PCER_INIT              ; Load r0 with the init constant
 	LDR	    r1, =AT91C_PMC_PCER             ; Load r1 with address of PMC_PCER
 	STR	    r0, [r1]                        ; *r1 = r0;   
 
-	LDR	    r0, =PIOA_PER_INIT              ; Load r0 with the init constant
-	LDR	    r1, =AT91C_PIOA_PER             ; Load r1 with address of PIOA_PER
-	STR	    r0, [r1]                        ; *r1 = r0;   
+	LDR	    r0, =PIOB_PER_INIT              ; Load r0 with the init constant
+	LDR	    r2, =AT91C_PIOB_PER             ; Load r1 with address of PIOA_PER
+	STR	    r0, [r2]                        ; *r1 = r0;   
 
 	LDR	    r0, =PIOB_PER_INIT              ; Load R0 with the (location of the) constant
 	LDR	    r2, =AT91C_PIOB_PER             ; Load R2 with address of PIOB_PER (a constant)
 	STR	    r0, [r2]                        ; *r2 = r0; 
+
 	LDR	    r0, =PIOB_OER_INIT              ; Load R0 with the (location of the) constant
 	STR	    r0, [r2, #PER_OER_OFFSET]       ; *(r2 + PER_OER_OFFSET)  = r0
 	STR	    r0, [r2, #PER_OWER_OFFSET]      ; *(r2 + PER_OWER_OFFSET)  = r0
+
   LDR	    r0, =PIOB_CODR_INIT             ; Load R0 with the (location of the) constant
 	STR	    r0, [r2, #PER_CODR_OFFSET]      ; *(r2 + PER_SODR_OFFSET) = r0
   
@@ -128,8 +137,8 @@ update_LED
   EOR     r3, r3, #PB_18_LED_BLU          ; r3 = r3 XOR the value to toggle the blue LED
 
 check_button
- 	LDR		  r4, [r1, #PER_PDSR_OFFSET]      ; r4 = *(r1 + PER_PDSR_OFFSET) read the current AT91C_PIOA_PDSR value
-  ANDS    r4, r4, #PA_17_BUTTON0          ; Mask off all bits except BUTTON0
+ 	LDR		  r4, [r2, #PER_PDSR_OFFSET]      ; r4 = *(r1 + PER_PDSR_OFFSET) read the current AT91C_PIOA_PDSR value
+  ANDS    r4, r4, #PB_02_BUTTON3         ; Mask off all bits except BUTTON0
   BNE     button_not_pressed              ; if (BUTTON0)
   
 button_pressed                            ; Add a breakpoint after this line

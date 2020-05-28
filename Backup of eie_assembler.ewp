@@ -11,7 +11,7 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>31</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.30.1.17146</state>
+                    <state>8.10.1.12859</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +156,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -195,19 +195,6 @@
                 <option>
                     <name>GenLocaleDisplayOnly</name>
                     <state></state>
-                </option>
-                <option>
-                    <name>DSPExtension</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>TrustZone</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>TrustZoneModes</name>
-                    <version>0</version>
-                    <state>0</state>
                 </option>
             </data>
         </settings>
@@ -683,7 +670,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>21</version>
+                <version>20</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -995,10 +982,6 @@
                     <name>IlinkLocaleSelect</name>
                     <state>1</state>
                 </option>
-                <option>
-                    <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -1038,7 +1021,7 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>31</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1143,7 +1126,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1160,7 +1143,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1183,7 +1166,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>24</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1222,19 +1205,6 @@
                 <option>
                     <name>GenLocaleDisplayOnly</name>
                     <state></state>
-                </option>
-                <option>
-                    <name>DSPExtension</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>TrustZone</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>TrustZoneModes</name>
-                    <version>0</version>
-                    <state>0</state>
                 </option>
             </data>
         </settings>
@@ -1710,7 +1680,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>21</version>
+                <version>20</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -2022,10 +1992,6 @@
                     <name>IlinkLocaleSelect</name>
                     <state>1</state>
                 </option>
-                <option>
-                    <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -2068,10 +2034,7 @@
         <name>$PROJ_DIR$\exceptions.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\kill_x_cycles.s</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\main_assembler_gpio.s</name>
+        <name>$PROJ_DIR$\main_assembler.s</name>
     </file>
     <file>
         <name>$PROJ_DIR$\sam3u2c_flash.icf</name>
